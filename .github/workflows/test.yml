@@ -94,16 +94,15 @@ jobs:
               source py38-venv/bin/activate && \
               pip install django-silk && \
               pip install -r requirements.txt && \
-              export sqlite3: DB_ENGINE=sqlite3 && \
-              export sqlite3: DB_NAME=":memory:" && \
-              export mysql: DB_ENGINE=mysql && \
-              export mysql: DB_NAME=mysql && \
-              export mysql: DB_USER=root && \
-              export mysql: DB_PASSWORD=mysql && \
-              export mysql: DB_PORT=3306 && \
-              export postgresql: DB_ENGINE=postgresql && \
-              export postgresql: DB_NAME=postgres && \
-              export postgresql: DB_PASSWORD=postgres && \
+              export DB_NAME=":memory:" && \
+              export DB_ENGINE=mysql && \
+              export DB_NAME=mysql && \
+              export DB_USER=root && \
+              export DB_PASSWORD=mysql && \
+              export DB_PORT=3306 && \
+              export DB_ENGINE=postgresql && \
+              export DB_NAME=postgres && \
+              export DB_PASSWORD=postgres && \
               export DB_ENGINE=sqlite3 && \
               export DB_NAME=db.sqlite3 && \
               python -m pip install --upgrade pip && \
