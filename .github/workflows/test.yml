@@ -92,7 +92,18 @@ jobs:
               bash -exc 'apt-get update && apt-get -y install python3 python3-pip python3-venv curl && \
               python3 -m pip install virtualenv && python3 -m venv py38-venv && \
               source py38-venv/bin/activate && \
+              pip install django-silk && \
               pip install -r requirements.txt && \
+              export sqlite3: DB_ENGINE=sqlite3 && \
+              export sqlite3: DB_NAME=":memory:" && \
+              export mysql: DB_ENGINE=mysql && \
+              export mysql: DB_NAME=mysql && \
+              export mysql: DB_USER=root && \
+              export mysql: DB_PASSWORD=mysql && \
+              export mysql: DB_PORT=3306 && \
+              export postgresql: DB_ENGINE=postgresql && \
+              export postgresql: DB_NAME=postgres && \
+              export postgresql: DB_PASSWORD=postgres && \
               export DB_ENGINE=sqlite3 && \
               export DB_NAME=db.sqlite3 && \
               python -m pip install --upgrade pip && \
