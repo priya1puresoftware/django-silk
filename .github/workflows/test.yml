@@ -93,7 +93,7 @@ jobs:
               python3 -m pip install virtualenv && python3 -m venv py38-venv && \
               source py38-venv/bin/activate && \
               pip install wheel && \
-              python setup.py bdist_wheel && \
+              apt-get install python3-pip && \
               python setup.py install && \
               pip install django-silk && \
               pip install -r requirements.txt && \
