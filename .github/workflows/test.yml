@@ -94,6 +94,9 @@ jobs:
               source py38-venv/bin/activate && \
               pip install django-silk && \
               pip install -r requirements.txt && \
+              pip install -e . && \
+              python -m pip install --upgrade pip && \
+              python -m pip install --upgrade tox tox-gh-actions && \
               export DB_NAME=":memory:" && \
               export DB_ENGINE=mysql && \
               export DB_NAME=mysql && \
@@ -105,7 +108,5 @@ jobs:
               export DB_PASSWORD=postgres && \
               export DB_ENGINE=sqlite3 && \
               export DB_NAME=db.sqlite3 && \
-              python -m pip install --upgrade pip && \
-              python -m pip install --upgrade tox tox-gh-actions && \
               tox -v && \
               deactivate'
